@@ -105,7 +105,9 @@ var CityVibe = function( ops ) {
 
 				for (var i = 0; i < loops; i++) {
 					TAGS_BY_CITY.push(tags[i].name);
+					console.log(TAGS_BY_CITY);
 				}
+				$(".city").text(ops.city);
 			},
 			error: function() {
 				// NEVER FAIL PLEASE
@@ -128,7 +130,7 @@ var Results = function( genres ) {
 
 		var total = this.getTotal();
 		var i = 0;
-
+		var p = 0;
 		var t = window.setTimeout(function() {
 			for (genre in genres) {
 				$skycrapers.eq(i).css({
@@ -137,6 +139,14 @@ var Results = function( genres ) {
 
 				i++;
 			}
+
+			var pst = window.setTimeout(function() {
+				for (genre in genres) {
+					$skycrapers.eq(p).find(".value").text(Math.floor(100 / total * genres[genre]) + "%").addClass("on");
+
+					p++;
+				}
+			}, 1000)
 		}, 500);
 	}
 
@@ -169,5 +179,7 @@ $(".close").on('click', function(e) {
 	ANALYZED_GENRES;
 	$(".skycraper").css({
 		height: 0,
-	})
+	});
+	$(".value").removeClass("on").text("00%");
+
 });

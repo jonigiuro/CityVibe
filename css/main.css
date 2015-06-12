@@ -104,6 +104,7 @@ html, body {
     bottom: 50px;
     background: url("/img/background.jpg") center center no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .overlay .close {
@@ -112,6 +113,16 @@ html, body {
     font-size: 30px;
     color: white;
     z-index: 99;
+}
+
+.overlay .city {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    color: white;
+    font-family: "8bit";
+    font-size: 80px;
+    text-align: center;
 }
 
 .open-overlay .overlay{
@@ -127,13 +138,16 @@ html, body {
     bottom: 0;
     left: 50%;
     border-top: 8px solid #888;
-    transition: height 1500ms ease-in-out;
+    transition: height 750ms ease-in-out;
+    width: 20%;
+    max-width: 241px;
 }
 
 .skycraper .genre {
     position: absolute;
     top: 0;
-    width: 241px;
+    width: 100%;
+    max-width: 241px;
     text-align: center;
     display: block;
     background: white;
@@ -141,20 +155,52 @@ html, body {
     font-family: "8bit";
 }
 
+.skycraper .value {
+    color: white;
+    font-family: "8bit";
+    font-size: 50px;
+    position: absolute;
+    top: -60px;
+    width: 120px;
+    text-align: center;
+    color: #333;
+    border-top: 3px solid #333;
+    left: 50%;
+    margin-left: -60px;
+    opacity: .6;
+    transition: opacity 120ms ease-in-out;
+}
+
+.skycraper .value.on {
+    color: white;
+    background: -moz-linear-gradient(top,  rgba(241,218,54,0.5) 0%, rgba(254,252,234,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,218,54,0.5)), color-stop(100%,rgba(254,252,234,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(241,218,54,0.5) 0%,rgba(254,252,234,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(241,218,54,0.5) 0%,rgba(254,252,234,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(241,218,54,0.5) 0%,rgba(254,252,234,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(241,218,54,0.5) 0%,rgba(254,252,234,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80f1da36', endColorstr='#00fefcea',GradientType=0 ); /* IE6-9 */
+    opacity: 1;
+}
+
 .sky1 {
-    transform: translateX(-500px);
+    transform: translateX(-270%);
 }
 
 .sky2 {
-    transform: translateX(-250px);
+    transform: translateX(-160%);
 }
 
 .sky3 {
-    transform: translateX(0);
+    transform: translateX(-50%);
 }
 
 .sky4 {
-    transform: translateX(250px);
+    transform: translateX(60%);
+}
+
+.sky5 {
+    transform: translateX(170%);
 }
 
 .map {
