@@ -1,0 +1,75 @@
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="author" content="CityVibe">
+    <meta name="description" content="Bla Bla Bla">
+    <meta name="keywords" content="">
+    <title>CityVibe - Your guide to everything</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	
+	
+    <noscript>
+        <!--<meta http-equiv="refresh" content="0; URL=nojs.html">-->
+        <h2 style="text-align: center">Please enable JavaScript to view this website</h2>
+    </noscript>
+    
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+	        
+	<style type="text/css">
+		.map {
+			width: 100%;
+			height: 100%;
+			margin: 0 0 1em 0;
+		}
+		</style>
+	
+</head>
+<body>
+	<div id="toner" class="map"></div>
+	
+	<script>
+		var map;
+		var markers = [
+			{lat : 53.551085, long : 9.993682, id : 'hamburg', options : {riseOnHover : true}}
+		];
+		
+		$( document ).ready(function() {
+			initMap();
+			addMarkers();
+		});
+		
+		
+		function initMap() {
+			var layer = "toner";
+			map = new L.Map(layer, {
+				center: new L.LatLng(markers[0].lat, markers[0].long),
+				zoom: 10
+			});
+			map.addLayer(new L.StamenTileLayer(layer, {
+				detectRetina: true
+			}));
+		}
+		
+		function addMarkers() {
+			for(var i = 0; i < markers.length;i++) {
+				var item = markers[i];
+				console.log(item)
+				var marker = L.marker([item.lat, item.long], item.options).addTo(map);
+				marker.on('click', onMarkerClick);
+				marker.data = item;
+			}
+		}
+		
+		function onMarkerClick(event) {
+			console.log(event.target.data)
+		}
+	</script>
+</body>
+</html>
