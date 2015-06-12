@@ -64,7 +64,7 @@ var CityVibe = function( ops ) {
 						url: "http://ws.audioscrobbler.com/2.0/?method=geo.getmetroartistchart&country=germany&metro=hamburg&api_key=" + API_KEY,
 						type: "GET",
 						success: function( data ) {
-							console.log(data);
+							//console.log(data);
 						}
 					})
 				}
@@ -105,7 +105,6 @@ var CityVibe = function( ops ) {
 
 				for (var i = 0; i < loops; i++) {
 					TAGS_BY_CITY.push(tags[i].name);
-					console.log(TAGS_BY_CITY);
 				}
 				$(".city").text(ops.city);
 			},
