@@ -3,12 +3,12 @@
 function getGenreHashmap() {
 
 	var genres = new Array;
-	genres['alternative']	= 'independent, indie, alternative, emo, grunge, ebm, indie-rock, indierock';
-	genres['dance'] 		= 'dance, dubstep, rnb, r&b, house, club, techno, dub, dancehall';
+	genres['alternative']	= 'independent, indie, alternative, emo, grunge, ebm, indie-rock, indierock, singer-songwriter';
+	genres['dance'] 		= 'dance, dubstep, rnb, r&b, house, club, techno, dub, dancehall, drum and bass, ambience, beats, trip hop, 2-step, roc-a-fella, nu-disco';
 	genres['electro'] 		= 'electro, electronica, electronic, dance, electro house';
-	genres['pop'] 			= 'pop, popmusic, charts, britpop, british';
+	genres['pop'] 			= 'pop, popmusic, charts, britpop, british, urban pop';
 	genres['rock'] 			= 'alternative rock, rock, progressive, hard rock';
-		
+			
 	return genres;
 }
 
